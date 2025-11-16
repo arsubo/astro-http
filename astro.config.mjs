@@ -16,14 +16,16 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), db()],
   adapter: cloudflare(),
   vite: {
-    optimizeDeps: {
-      // Forzar la pre-optimización de picocolors
-      include: ['picocolors'],
+    ssr: {
+      // ⚠️ IMPORTANTE: Añadir 'picocolors' a la lista
+      // Esto fuerza a Vite a hacer el bundling de picocolors para SSR
+      noExternal: ['picocolors'],
     },
-    build: {
-      rollupOptions: {
-        external: ['picocolors'],
-      },
-    },
+    // Opcional: Si el paso anterior no funciona, intenta solo con external.
+    // build: {
+    //   rollupOptions: {
+    //     external: ['picocolors'],
+    //   },
+    // },
   },
 });
