@@ -16,7 +16,7 @@
     "@astrojs/node": "^9.5.0",
     "@astrojs/rss": "^4.0.13",
     "@astrojs/sitemap": "^3.6.0",
-    "astro": "^5.15.3",
+    "astro": "^5.15.8",
     "sharp": "^0.34.3"
   }
 }
