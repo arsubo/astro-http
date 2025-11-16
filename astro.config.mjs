@@ -14,6 +14,7 @@ import db from '@astrojs/db';
 export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), db()],
+  output: 'server', // Necesario para Cloudflare Pages
   adapter: cloudflare(),
   vite: {
     ssr: {
