@@ -18,15 +18,8 @@ export default defineConfig({
   adapter: cloudflare(),
   vite: {
     ssr: {
-      // ⚠️ IMPORTANTE: Añadir 'picocolors' a la lista
-      // Esto fuerza a Vite a hacer el bundling de picocolors para SSR
+      // Forzar a Vite a incluir 'picocolors' en el bundle de SSR
       noExternal: ['picocolors'],
     },
-    // Opcional: Si el paso anterior no funciona, intenta solo con external.
-    // build: {
-    //   rollupOptions: {
-    //     external: ['picocolors'],
-    //   },
-    // },
   },
 });
