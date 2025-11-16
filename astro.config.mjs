@@ -15,4 +15,15 @@ export default defineConfig({
   site: 'https://example.com',
   integrations: [mdx(), sitemap(), db()],
   adapter: cloudflare(),
+  vite: {
+    optimizeDeps: {
+      // Forzar la pre-optimización de picocolors
+      include: ['picocolors'],
+    },
+    build: {
+      rollupOptions: {
+        external: ['picocolors'],
+      },
+    },
+  },
 });
