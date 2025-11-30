@@ -18,4 +18,9 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), db(), vue()],
   output: 'server', // Necesario para Cloudflare Pages
   adapter: cloudflare(),
+  vite: {
+    ssr: {
+      noExternal: ['cssesc'],
+    },
+  },
 });
